@@ -6,7 +6,7 @@ Determinadas ações no procesador requerem informações (intruções ou dados)
 ```
 Entenda memória como uma hierarquia de memórias e podemos imaginar elas dispostas uma 
 sobre a outra como uma pirâmide, onde quanto mais alta, mais rápida e mais cara ela será. 
-Nessa hierarquia, a cache está acima da memória principal, o que torna evidente sua velicidade 
+Nessa hierarquia, a cache está acima da memória principal, o que torna evidente sua velocidade 
 maior diante da outra.
 ```
 Os passos são os seguintes:
@@ -35,87 +35,44 @@ E quanto aos algoritmos de substituição:
 | LRU          |
 | FIFO         |
 
-## Getting Started
+Além disse, também há o tipo de escrita. Que será fundamental para definir a forma de escrever informações nos endereços de memória informado:
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+| Escrita        |
+|:--------------:|
+| WRITE-BACK     |
+| WRITE-THROUGH  |
 
-### Prerequisites
+## Começando
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Assim que adquirir o repositório do projeto, você deverá acessar a pasta raiz do mesmo e executar o arquivo *compile.sh* para compilar. Um arquivo binário com o nome *cache* será gerado no diretório *build*. Então, ainda da pasta raiz, digite o seguinte comando:
 
 ```
-Give the example
+$ ./build/cache data/config.txt
 ```
 
-And repeat
+**MUITA ATENÇÃO** nessa hora, você deverá passar um arquivo *config.txt* que contém todas as informações necessárias para que o simulador possa funcionar. Tais informações como:
+  * Tamanho dos blocos;
+  * Quantidade de linhas da cache;
+  * Quantidade de blocos na memória principal;
+  * Tipo do mapeamento escolhido *[1,3]*;
+  * Número de conjuntos na cache (essa informação será utilizada apenas se o tipo de mapeamento for associativo por conjunto, mas por padrão, é obrigatório que esse dado esteja incluso no arquivo);
+  * Tipo de algoritmo de substituição *[1,4]*;
+  * Tipo de escrita escolhida *[1,2]*.
 
-```
-until finished
-```
+**A sequencia das informações deve ser dada nessa EXATA sequência no arquivo, sendo um número para cada.** Veja o [arquivo posto como exemplo.](data/config.txt)
+*[OBS: algumas informações podem ser corrigidas durante a execução do simulador caso sejam inválidas!]*
 
-End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Utilizando
 
-Explain how to run the automated tests for this system
+Assim que executar, você irá se deparar com um diálogo onde poderá interagir com o simulador por meio de comandos. Esses comandos são os seguintes:
+ * **read [address]**: esse comando possui um parâmetro *address* que corresponde ao endereço de memória que você quer ler. Ele retornará HIT se o endereço estiver alocado na cache, ou MISS se não estiver. Nesse último caso, se ela estiver na memória principal, então será alocado na cache de acordo com o mapeamento e o algoritmo de substituição;
+ * **write [address] [content]**: esse comando possui dois parâmetros: *content* que é o conteúdo que você quer escrever e  *address* que é o endereço de memória onde o conteúdo será escrito. Ele retornará HIT se o endereço estiver alocado na cache e escreve normalmente de acordo com o método de escrita, ou MISS se não estiver. Nesse último caso, se ela estiver na memória principal, então será alocado na cache de acordo com o mapeamento e o algoritmo de substituição e só assim o conteúdo será escrito no endereço, claro, de acordo com o método de escrita;
+ * **show**: mostra na tela o estado atual da cache e da memória principal;
+ * **help**: informa os comandos disponíveis que o usuário pode inserir;
+ * **details**: retorna todas as informações que foram definidas pelas usuário quanto ao tamanho do bloco, quantidade de linhas na cache e blocos na memória, tipo do mapeamento, número de conjuntos, tipo do algoritmo de substituição e escrita.
+ * **quit**: sai do simulador.
 
-### Break down into end to end tests
+## Autor
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
+* **Franklin Matheus da Costa Lima** - Aluno do Bacharelado em Tecnologia da Informação na Universidade Federal do Rio Grande do Norte (UFRN) - [Franklin Matheus](https://github.com/FranklinMatheus)
