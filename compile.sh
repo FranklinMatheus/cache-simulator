@@ -1,0 +1,1 @@
+g++ -std=c++11 -Wall -I include ./src/* -o build/cache -g
