@@ -59,7 +59,7 @@ $ ./build/cache data/config.txt
   * Tipo de algoritmo de substituição *[1,4]*;
   * Tipo de escrita escolhida *[1,2]*.
 
-**A sequencia das informações deve ser dada nessa EXATA sequência no arquivo, sendo um número para cada.** Veja o [arquivo posto como exemplo.](data/config.txt)
+**A sequencia das informações deve ser dada nessa EXATA sequência no arquivo, sendo um número para cada.** Veja o [arquivo posto como exemplo.](https://github.com/FranklinMatheus/cache-simulator/blob/master/data/config.dat)
 *[OBS: algumas informações podem ser corrigidas durante a execução do simulador caso sejam inválidas!]*
 
 
