@@ -4,7 +4,10 @@ Esse projeto tem como objetivo representar uma simulação entre uma **memória 
 Determinadas ações no procesador requerem informações (intruções ou dados) que estão armazenadas na memória. 
 
 ```
-Entenda memória como uma **hierarquia** de memórias e podemos imaginar elas dispostas uma sobre a outra como uma pirâmide, onde quanto mais alta, mais rápida e mais cara ela será. Nessa hierarquia, a cache está acima da memória principal, o que torna evidente sua velicidade maior diante da outra.
+Entenda memória como uma hierarquia de memórias e podemos imaginar elas dispostas uma 
+sobre a outra como uma pirâmide, onde quanto mais alta, mais rápida e mais cara ela será. 
+Nessa hierarquia, a cache está acima da memória principal, o que torna evidente sua velicidade 
+maior diante da outra.
 ```
 Os passos são os seguintes:
 
