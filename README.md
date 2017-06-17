@@ -40,7 +40,7 @@ Além disse, também há o tipo de escrita. Que será fundamental para definir a
 | Escrita        |
 |:--------------:|
 [| WRITE-BACK     |](https://en.wikipedia.org/wiki/Cache_(computing)#WRITE-BACK)
-| WRITE-THROUGH  |
+[| WRITE-THROUGH  |](https://en.wikipedia.org/wiki/Cache_(computing)#WRITE-THROUGH)
 
 ## Começando
 
